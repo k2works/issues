@@ -6,6 +6,8 @@ defmodule Issues.MixProject do
       app: :issues,
       escript: escript_config(),
       version: "0.1.0",
+      name:    "Issues",
+      source_url: "https://github.com/k2works/issues",
       elixir: "~> 1.7",
       start_permanent: Mix.env() == :prod,
       deps: deps()
@@ -28,6 +30,8 @@ defmodule Issues.MixProject do
       {:credo, "~> 1.0.0", only: [:dev, :test], runtime: false},
       {:httpoison, "~> 1.4"},
       {:poison, "~> 1.5"},
+      {:ex_doc, "~> 0.19"},
+      {:earmark, "~> 1.3"},
     ]
   end
 

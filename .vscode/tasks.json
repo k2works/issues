@@ -22,6 +22,11 @@
             "label": "build",
             "type": "shell",
             "command": "mix escript.build"
+        },
+        {
+            "label": "docs",
+            "type": "shell",
+            "command": "mix docs"
         }
     ]
 }
