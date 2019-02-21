@@ -7,6 +7,16 @@
             "label": "test",
             "type": "shell",
             "command": "mix test"
+        },
+        {
+            "label": "wtach",
+            "type": "shell",
+            "command": "mix test.watch"
+        },
+        {
+            "label": "lint",
+            "type": "shell",
+            "command": "mix credo"
         }
     ]
 }
