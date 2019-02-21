@@ -1,5 +1,10 @@
 defmodule Issues.GithubIssues do
   @user_agent [{"User-agent", "Elixir dave@proagprog.com"}]
+  @github_url Application.get_env(:issues, :github_url)
+
+  def issues_url(user, project) do
+    "#{@github_url}/repose/#{user}/#{project}/issues"
+  end
 
   def fetch(user, project) do
     issues_url(user, project)
@@ -12,10 +17,10 @@ defmodule Issues.GithubIssues do
   end
 
   def handle_response({:ok, %{status_code: 200, body: body}}) do
-    {:ok, body}
+    {:ok, Poison.Parser.parse!(body)}
   end
 
   def handle_response({___, %{status_code: ___, body: body}}) do
-    {:error, body}
+    {:error, Poison.Parser.parse!(body)}
   end
 end
