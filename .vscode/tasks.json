@@ -17,6 +17,11 @@
             "label": "lint",
             "type": "shell",
             "command": "mix credo"
+        },
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "mix escript.build"
         }
     ]
 }
