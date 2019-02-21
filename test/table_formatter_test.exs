@@ -33,6 +33,7 @@ defmodule TableFormatterTest do
     assert TF.format_for([9, 10, 11]) == "~-9s | ~-10s | ~-11s~n"
   end
 
+  @tag :skip
   test "Output is correct" do
     result = capture_io fn -> TF.print_table_for_columns(simple_test_data, headers) end
     assert result == """
